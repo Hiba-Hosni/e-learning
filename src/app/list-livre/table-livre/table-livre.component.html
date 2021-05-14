@@ -1,0 +1,45 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Titre</th>
+    <th>Auteur</th>
+    <th>Date édition</th>
+    <th>Catégorie</th>
+    <th>Disponibe</th>
+    <th>Opérations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let livre of livres">
+    <td>{{livre.titre}}</td> <!--interpolation -->
+    <td>{{livre.auteur}}</td>
+    <td>{{livre.anneeEdition | date: 'MM/yyyy'}}</td>
+    <td>{{livre.categorie}}</td>
+    <td *ngIf="livre.disponible">Oui</td>
+    <td *ngIf="!livre.disponible">Non</td>
+
+    <td>
+      <!--event binding -->
+      <button class="btn btn-danger mr-2"  (click)="open(content, livre.id)">Supprimer</button>
+      <button class="btn btn-warning" routerLink="/livre/edit/{{livre.id}}">Editer</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>voulez vous supprimer ?</strong></p>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" ngbAutofocus class="btn btn-danger" (click)="modal.close('Ok')">Ok</button>
+  </div>
+</ng-template>

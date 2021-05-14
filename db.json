@@ -1,0 +1,28 @@
+{
+  "livres": [
+    {
+      "titre": "hiba",
+      "auteur": "hiba hosni",
+      "anneeEdition": "2021-07",
+      "categorie": "Développement personnel",
+      "disponible": true,
+      "id": 1
+    },
+    {
+      "anneeEdition": "2021-06",
+      "titre": "qqq",
+      "auteur": "qqq",
+      "categorie": "Cuisine",
+      "disponible": true,
+      "id": 2
+    },
+    {
+      "anneeEdition": "2021-05",
+      "titre": "film",
+      "auteur": "test",
+      "categorie": "Droit & économie",
+      "disponible": true,
+      "id": 3
+    }
+  ]
+}

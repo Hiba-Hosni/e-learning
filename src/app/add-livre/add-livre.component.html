@@ -1,0 +1,51 @@
+<form #f="ngForm" (ngSubmit)="f.form.valid && save()">
+<div class="card ">
+  <div class="card-header bg-info text-white">
+    Ajout livre
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label>Titre</label>
+      <input class="form-control col-sm-8" name="titre" [(ngModel)]="livre.titre" required #titre="ngModel">
+      <span class="text-danger" *ngIf="f.submitted && titre.invalid">Titre obligatoire</span>
+    </div>
+
+
+    <div class="form-group">
+      <label>Auteur</label>
+      <input class="form-control col-sm-8" name="auteur" [(ngModel)]="livre.auteur" required #auteur="ngModel">
+      <span class="text-danger" *ngIf="f.submitted && auteur.invalid">Auteur obligatoire</span>
+    </div>
+
+
+    <div class="form-group">
+      <label>Date d'édition</label>
+      <input type="month" class="form-control col-sm-8" name="anneeEdition" [(ngModel)]="livre.anneeEdition" required #anneeEdition="ngModel">
+      <span class="text-danger" *ngIf="f.submitted && anneeEdition.invalid">Date d'edition obligatoire</span>
+    </div>
+
+
+    <div class="form-group">
+      <label>Catégorie</label>
+      <select class="form-control col-sm-8" name="categorie" [(ngModel)]="livre.categorie" required #categorie="ngModel">
+      <option value="Art musique et cinéma">Art musique et cinéma</option>
+      <option value="Bandes dessinées">Bandes dessinées</option>
+      <option value="Cuisine">Cuisine</option>
+      <option value="Développement personnel">Développement personnel</option>
+      <option value="Dictionnaires & langues">Dictionnaires & langues</option>
+      <option value="Droit & économie">Droit & économie</option>
+      <option value="Essais et documents">Essais et documents</option>
+      </select>
+      <span class="text-danger" *ngIf="f.submitted && categorie.invalid">Catégorie obligatoire</span>
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <div class="float-right">
+      <button type="reset" class="btn btn-danger mr-2">Annuler</button>
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+  </div>
+</div>
+
+</form>

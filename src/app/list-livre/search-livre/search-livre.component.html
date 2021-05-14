@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">Recherche avancée</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label>Titre</label>
+        <input class="form-control" [(ngModel)]="livre.titre">
+      </div>
+      <div class="form-group col-sm-4">
+        <label>Auteur</label>
+        <input class="form-control" [(ngModel)]="livre.auteur"> <!--two way binding -->
+      </div>
+      <div class="form-group col-sm-4">
+        <label>Catégorie</label>
+        <select class="form-control" name="categorie" [(ngModel)]="livre.categorie">
+          <option value="">Choisir catégorie</option>
+          <option value="Art musique et cinéma">Art musique et cinéma</option>
+          <option value="Bandes dessinées">Bandes dessinées</option>
+          <option value="Cuisine">Cuisine</option>
+          <option value="Développement personnel">Développement personnel</option>
+          <option value="Dictionnaires & langues">Dictionnaires & langues</option>
+          <option value="Droit & économie">Droit & économie</option>
+          <option value="Essais et documents">Essais et documents</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-secondary float-right" (click)="doFilter()">Filtrer</button>
+  </div>
+</div>
